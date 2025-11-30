@@ -117,8 +117,8 @@ if "next" in params:
     
     if st.button("Done"):
         st.empty()  # clears existing elements
-        A='your name:' + her_name + '-- your id:'+ str(connection)  
-        st.write(her_name)
+        A='your name : ' + her_name + '-- your id : '+ str(connection)  
+        st.write(A)
         st.write("✅ Done")
         st.stop()
     if "finished" not in st.session_state:
@@ -223,5 +223,6 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
