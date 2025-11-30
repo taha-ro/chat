@@ -103,7 +103,7 @@ if "next" in params:
         unsafe_allow_html=True,
     )
     her_name=str(st.text_input("name", placeholder="name:",label_visibility="hidden"))
-    connection = str(st.text_input("connection", placeholder="یک راه ارتباطی هرچی که راحت هستید برای هماهنگی یه قرار کافه (id- eamil -number): ",label_visibility="hidden"))
+    connection = str(st.text_input("connection", placeholder="یک راه ارتباطی هرچی که راحت هستید برای هماهنگی یه قرار کافه (id/eamil..): ",label_visibility="hidden"))
     text_main =str(st.text_input("text", placeholder=" اگه صحبتی دارید ",label_visibility="hidden"))
     b0=st.button('send')
     if b0:
@@ -159,7 +159,7 @@ if "finish" in params:
 # --- Default (first page) ---
 text1 = "سلام! اگر سینگل هستید لطفا دکمه"
 text2 = "Next"
-text3 = "و در غیر این صورت من عذر می‌خوام و این کاغذ رو آتیش بزنید."
+text3 = "و در غیر این صورت من عذر می‌خوام و این کاغذ رو  بندازید دور."
 
 st.markdown(
     f"""
@@ -223,6 +223,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
 
