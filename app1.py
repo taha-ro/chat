@@ -82,46 +82,45 @@ if "next" in params:
     her_name=' '
     connection=' '
     st.session_state.page='next'
-    if st.session_state.page != "Done":
-        st.markdown(
-            """
-            <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
-            <style>
-            .farsi-hi {
-                font-family: 'Vazirmatn', sans-serif;
-                font-size: 28px;
-                color: white;
-                text-align: center;
-                margin-top: 100px;
-                direction: rtl;
-            }
-            body { background-color: black; }
-            </style>
-            <p class="farsi-hi">سلام! 🙌 یه برنامه نویس خجالتی که اگه مایل باشید دوست داره باشما بیشتر آشنا بشه(ماشین برقی سفیده) اگه هم مایل نیستید ببخشید وقتتون رو گرفتم </p>
-            """,
-            unsafe_allow_html=True,
-        )
-        her_name=str(st.text_input("name", placeholder="name:", label_visibility="hidden"))
-        connection = str(st.text_input("connection", placeholder="یک راه ارتباطی هرچی که راحت هستید برای هماهنگی یه قرار کافه (id- eamil -number): ", label_visibility="hidden"))
-        text_main =str(st.text_input("text", placeholder=" اگه صحبتی دارید ",  label_visibility="hidden"))
+    st.markdown(
+        """
+        <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+        .farsi-hi {
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 28px;
+            color: white;
+            text-align: center;
+            margin-top: 100px;
+            direction: rtl;
+        }
+        body { background-color: black; }
+        </style>
+        <p class="farsi-hi">سلام! 🙌 یه برنامه نویس خجالتی که اگه مایل باشید دوست داره باشما بیشتر آشنا بشه(ماشین برقی سفیده) اگه هم مایل نیستید ببخشید وقتتون رو گرفتم </p>
+        """,
+        unsafe_allow_html=True,
+    )
+    her_name=str(st.text_input("name", placeholder="name:", label_visibility="hidden"))
+    connection = str(st.text_input("connection", placeholder="یک راه ارتباطی هرچی که راحت هستید برای هماهنگی یه قرار کافه (id- eamil -number): ", label_visibility="hidden"))
+    text_main =str(st.text_input("text", placeholder=" اگه صحبتی دارید ",  label_visibility="hidden"))
 
-        b0=st.button('send')
-        if b0:
-            Insert_table(connection,her_name ,text_main)
-            state=Insert_table.status(connection,her_name ,text_main)
-            st.write(state)
+    b0=st.button('send')
+    if b0:
+        Insert_table(connection,her_name ,text_main)
+        state=Insert_table.status(connection,her_name ,text_main)
+        st.write(state)
 
-        b1=st.button('my connection')
-        if b1:
-            st.write('telegram id: @Ro_Taha')
-            print(her_name)
+    b1=st.button('my connection')
+    if b1:
+        st.write('telegram id: @Ro_Taha')
+        print(her_name)
 
-        b2=st.button("Done")
-        if b2:
-            st.session_state.page = "Done"
-            st.write('your name : '+ her_name + ' --   your connection : '+connection)
-            st.write("✅ Done!")
-            st.stop()
+    b2=st.button("Done")
+    if b2:
+        st.session_state.page = "Done"
+        st.write('your name : '+ her_name + ' --   your connection : '+connection)
+        st.write("✅ Done!")
+        st.stop()
         
     if "finished" not in st.session_state:
         st.session_state.finished = False
