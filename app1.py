@@ -111,7 +111,7 @@ if "next" in params:
         state=Insert_table.status(connection,her_name ,text_main)
         st.write(state)
     b1=st.button('my connection')
-    if b1:
+    if b1 and connection !='':
         st.write('telegram id: @Ro_Taha')
         print(her_name)
     
@@ -223,6 +223,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 
 
